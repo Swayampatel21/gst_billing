@@ -25,6 +25,6 @@ services:
       - key: DB_DATABASE
         value: gst_billing
       - key: DB_USERNAME
-        value: 
+        value: root
       - key: DB_PASSWORD
         value: 
