@@ -1,0 +1,2 @@
+# This file forces Render.com to use the PHP environment for deployment
+env: php
