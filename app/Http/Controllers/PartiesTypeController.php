@@ -26,15 +26,12 @@ class PartiesTypeController extends Controller
         'parties' => $getRecordAll
     ];
 
-    // Generate PDF
     $pdf = PDF::loadview('PartiesTypePDF', $data);
 
-    // Get logged-in user details
     $user = Auth::user();
     $userName = $user->name ?? 'User';
-    $userEmail = $user->email ?? 'admin@example.com'; // fallback
+    $userEmail = $user->email ?? 'admin@example.com'; 
 
-    // Send email with PDF attached
     Mail::to($userEmail)->send(new GSTBillGenerated($userName, date('d-m-Y'), $pdf->output()));
 
     // Download the PDF

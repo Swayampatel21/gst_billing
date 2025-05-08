@@ -76,3 +76,6 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
+
+
+Route::prefix('api')->group(base_path('routes/api.php'));
